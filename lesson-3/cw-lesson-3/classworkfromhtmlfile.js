@@ -79,11 +79,11 @@ let simpsons = [
     NAME- SURNAME- AGE- INFO- <img  src="PHOTO" alt="">
 </div>*/
 
-for( let user of simpsons) {
+/*for( let user of simpsons) {
         document.write(`<div class="user">`);
         document.write(`${user["name"]}  -  ${user["surname"]}  -  ${user["age"]}  -  ${user["info"]} -<div> <img class="simimg" src="${user["photo"]}" alt=""></div>`);
             document.write(`</div>`);
-}
+}*/
 //Чому малюнки всередині тексту??????????
 
 
@@ -102,7 +102,7 @@ for( let user of simpsons) {
 -->*/
 
 
-/*document.write(`<div class="wrapper">`);
+document.write(`<div class="wrapper">`);
 for( let user of simpsons) {
     document.write(`<div class="simpsons-item">`);
     document.write(`<div>`);
@@ -116,7 +116,7 @@ for( let user of simpsons) {
     document.write(`<img src="${user["photo"]}" alt="">`);
     document.write(`</div>`);
 }
-document.write(`</div>`);*/
+document.write(`</div>`);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -166,8 +166,7 @@ let products = [
 
 </div>*/
 
-/*
-document.write(`<div class="wrap">`);
+/*document.write(`<div class="wrap">`);
 for( let product of products){
     document.write(`<div class="product-card">`);
 document.write(`<h3 class="product-title"> ${product["title"]}. </br> Price - ${product["price"]}</h3>`)
