@@ -117,9 +117,8 @@ function averagenum(arrayOfnums){
     let averagenumber = 0;// Спочатку, я тут прописувала замість цього виразу let  averagenumber = sum / arrayOfnums.length;, але в такому випадку результат був 0, не до кінця розумію, чому так?
     for( let num of arrayOfnums){
         sum = sum + num;
-        averagenumber = sum / arrayOfnums.length;
     }
-    return averagenumber;
+    return sum/ arrayOfnums.length;
 }
 console.log(averagenum(arrayOfnums));*/
 
