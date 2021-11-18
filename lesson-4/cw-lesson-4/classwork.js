@@ -110,7 +110,6 @@ console.log(sumOfarrayOfnums(arrayOfnums));*/
 
 //- створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
 
-/*
 let arrayOfnums = [10, 20, 30];
 function averagenum(arrayOfnums){
     let sum = 0;
@@ -120,7 +119,7 @@ function averagenum(arrayOfnums){
     }
     return sum/ arrayOfnums.length;
 }
-console.log(averagenum(arrayOfnums));*/
+console.log(averagenum(arrayOfnums));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -165,7 +164,7 @@ console.log(createRandomArray(5));*/
 /*function createRandomArray2(size, limit){
     let arrayRandom2 = [];
     for (let i = 0; i < size; i++) {
-        arrayRandom2[i] = Math.floor(Math.random() * (limit - 0));
+        arrayRandom2[i] = Math.floor(Math.random() * (limit));
         arrayRandom2.push(arrayRandom2[i]);
     }
     return arrayRandom2;
@@ -176,7 +175,7 @@ console.log(createRandomArray2(5, 10));*/
 
 //- Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 
-let arrayMain = [24,10,31];
+/*let arrayMain = [24,10,31];
 function arrayReverse(arrayMain){
     let arrayNew = [];
     for( let i = arrayMain.length - 1; i >= 0; i--){
@@ -184,4 +183,4 @@ function arrayReverse(arrayMain){
     }
     return arrayNew;
 }
-console.log(arrayReverse(arrayMain));
+console.log(arrayReverse(arrayMain));*/
