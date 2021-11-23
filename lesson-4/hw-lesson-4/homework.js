@@ -133,12 +133,12 @@ users(listOfUsers);*/
 
 //або таким способом
 
-/*let listOfUsers = [ {id: 1, name: 'Olena', age: 33}, {id: 2, name: 'Petro', age: 30}, {id: 3, name: 'Olia', age: 2}];
+let listOfUsers = [ {id: 1, name: 'Olena', age: 33}, {id: 2, name: 'Petro', age: 30}, {id: 3, name: 'Olia', age: 2}];
 
 function users(listOfUsers) {
     for (let i = 0; i < listOfUsers.length; i++) {
         document.write(`<div>${listOfUsers[i]["id"]} ${listOfUsers[i]["name"]} ${listOfUsers[i]["age"]}</div>`);
     }
 }
-users(listOfUsers);*/
+users(listOfUsers);
 

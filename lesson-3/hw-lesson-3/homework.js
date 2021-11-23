@@ -4,8 +4,8 @@
 // - з 5 значень стрічкового, числового та булевого типу
 // - та вивести його в консоль
 
-// let arrayOfNumbers = [ 25, 65, 87, 92, 55];
-// console.log (arrayOfNumbers);
+let arrayOfNumbers = [ 25, 65, 87, 92, 55];
+console.log (arrayOfNumbers);
 //
 // let arrayOfStrings = ["olena", "kniaz", "student", "mother", "wife"];
 // console.log (arrayOfStrings);
