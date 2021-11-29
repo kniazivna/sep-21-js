@@ -25,15 +25,38 @@
 //     }
 // }
 
-class User{
-    constructor(id, name, wife) {
+class User {
+    constructor(id, name, username, email, addressStreet, addressSuite, addressCity,
+                addressZipcode, addressGeoLat, addressGeoLng, phone, website, companyName, companyCatchPhrase, companyBs) {
         this.id = id;
         this.name = name;
-        this.wife = wife;
+        this.username = username;
+        this.email = email;
+        this.address = {
+            street: addressStreet,
+            suite: addressSuite,
+            city: addressCity,
+            zipcode: addressZipcode,
+            geo: {
+                addressGeoLat,
+                addressGeoLng
+            }
+        },
+            this.phone = phone,
+            this.website = website,
+            this.company = {
+                name: companyName,
+                catchPhrase: companyCatchPhrase,
+                bs: companyBs
+            }
+
+
     }
-
-
 }
 
-let user = new User(1, 'petro', {name:'olena', age:33});
+let user = new User(1, 'Leanne Graham', 'Bret', "Sincere@april.biz", "Kulas Light",
+    "Apt. 556", "Gwenborough", '92998-3874', "-37.3159", "81.1496",
+    '1-770-736-8031 x56442','hildegard.org','Romaguera-Crona',
+    'Multi-layered client-server neural-net', 'harness real-time e-markets');
 console.log(user);
+
