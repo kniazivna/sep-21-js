@@ -40,7 +40,7 @@ car.increaseMaxSpeed(20);
 car.drive();
 car.changeYear(2015);
 car.info();
-car.addDriver("olena");
+car.addDriver({name: "Olena", age:33});//тут в поточний об'єкт додає добре, але при виклику car.info відображається, як [object Object], можете підказати, як це виправити, бо я не до кінця розумію як це зробити, тільки гірше виходило теб що пробувала(
 car.info();
 
 
