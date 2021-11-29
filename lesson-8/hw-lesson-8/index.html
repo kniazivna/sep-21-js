@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate deleniti
+  molestias mollitia pariatur porro saepe! Dolorem eaque earum eligendi, iste maxime molestias quam vitae.
+  Dolore hic in quae sed.
+</p>
+
+<div id="rules" class="fc bp">
+  Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе. Второе правило Бойцовского
+  клуба: никогда никому не рассказывать о Бойцовском клубе. Третье правило Бойцовского клуба: в схватке
+  участвуют только двое. Четвертое правило Бойцовского клуба: не более одного поединка за один раз
+</div>
+
+<ul>
+  <li class="fc_rules rule1">Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</li>
+  <li class="fc_rules rule2">Второе правило Бойцовского
+    клуба: никогда никому не рассказывать о Бойцовском клубе
+  </li>
+  <li class="fc_rules rule3">Третье правило Бойцовского клуба: в схватке
+    участвуют только двое.
+  </li>
+  <li class="fc_rules rule4">Четвертое правило Бойцовского клуба: не более одного поединка за один раз</li>
+</ul>
+
+
+<script>
+  //- Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+  //-- отримує текст з параграфа з id "content"
+  let contentText = document.getElementById("content").innerText;
+  console.log(contentText);
+
+  //===================================================================================================================
+
+  //-- отримує текст з блоку з id "rules"
+
+  let rulesText = document.getElementById("rules").innerText;
+  console.log(rulesText);
+
+  //===================================================================================================================
+
+  //-- замініть текст параграфа з id 'content' на будь-який інший
+
+  let contentTextChange = document.getElementById("content");
+  contentTextChange.innerText = "-- замініть текст параграфа з id 'content' на будь-який інший";
+
+  //===================================================================================================================
+
+  //-- замініть текст параграфа з id 'rules' на будь-який інший
+  let rulesTextChange = document.getElementById("rules");
+  rulesTextChange.innerText = "-- замініть текст параграфа з id 'rules' на будь-який інший";
+
+  //===================================================================================================================
+
+  //-- змініть кожному елементу колір фону на червоний
+  //-- змініть кожному елементу колір тексту на синій
+ let children = document.body.children;
+ for( let child of children){
+   child.style.backgroundColor = 'red';
+   child.style.color = 'blue';
+ }
+
+  //===================================================================================================================
+
+//-- отримати весь список класів елемента з id=rules і вивести їх в console.log
+  let classList = document.getElementById('rules').classList
+ console.log(classList);
+
+  //===================================================================================================================
+
+  //-- поміняти колір тексту у всіх елементів fc_rules на червоний
+  let colorOfTextChange = document.getElementsByClassName('fc_rules');
+  for(let extract of colorOfTextChange){
+    extract.style.color = 'red';
+  }
+
+</script>
+</body>
+</html>
