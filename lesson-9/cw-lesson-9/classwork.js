@@ -173,14 +173,13 @@ for (let course of coursesArray) {
     ulBlock.style.border = "1px solid blue";
     ulBlock.style.margin = "2px";
     ulBlock.style.padding = "10px";
-    let liArray = course.modules;
-    for (let li of liArray) {
+    for (let li of course.modules) {
         let liBlock = document.createElement('li');
         liBlock.style.border = "1px solid blue";
         liBlock.style.margin = "2px";
         liBlock.style.padding = "10px";
         liBlock.style.listStyle = "none";
-        liBlock.textContent = `${li}`
+        liBlock.innerText = li;
         ulBlock.appendChild(liBlock);
     }
     document.body.appendChild(divBlock);
