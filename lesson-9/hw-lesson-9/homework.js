@@ -23,11 +23,11 @@ document.body.appendChild(divClone);
 // Завдання робити через цикли.
 
 let menu = ['Main', 'Products', 'About us', 'Contacts'];
-
+let liContainer = document.getElementsByClassName('menu')[0];
 for (const item of menu) {
     let liElement = document.createElement('li');
     liElement.innerText = `${item}`;
-    let liContainer = document.getElementsByClassName('menu')[0];//уточніть, будь ласка, цей рядок тут краще прописувати, чи вище перед циклом?
+   // let liContainer = document.getElementsByClassName('menu')[0];//уточніть, будь ласка, цей рядок тут краще прописувати, чи вище перед циклом?
     liContainer.appendChild(liElement);
 }
 
