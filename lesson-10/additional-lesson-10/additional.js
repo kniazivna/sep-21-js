@@ -47,7 +47,7 @@
 // При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 // Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 
-let popup = document.createElement('div');
+/*let popup = document.createElement('div');
 popup.style.margin = "0 auto";
 popup.style.padding = "10px";
 popup.style.width = '400px';
@@ -96,7 +96,7 @@ divWrap.append(popup, div1, p, div2);
 document.body.onclick = function (e) {
     popup.style.display = 'block';
     popup.innerText = "Назва тегу: " + e.target.localName + ",\nСписок класів: " + e.target.classList['add'] + ",\nCписок id: " + e.target.id + ",\nРозмір: " + e.target.clientHeight + "*" + e.target.clientWidth;
-}
+}*/
 // тут не дуже впевнена, бо не всію ще робити спливаючі вікна, можливо будуть паоади, як краще це зробити)))
 
 // можливо ще такий варіант має право на життя))))
@@ -125,11 +125,19 @@ let usersWithAddress = [
     {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
 ];
 
+
+
+
 //     - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как
 //     вместе так и по отдельности.
 // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
 // 2й - оставляет старше 29 лет включительно
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
-
+let form = document.createElement("form");
 let input1 = document.createElement("input");
+input1.type = 'checkbox';
+input1.name = 'input1';
+
+document.body.appendChild(form);
+form.append(input1);
