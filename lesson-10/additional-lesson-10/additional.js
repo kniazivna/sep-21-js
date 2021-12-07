@@ -136,6 +136,7 @@ let usersWithAddress = [
 // Данные выводить в документ
 let form = document.createElement("form");
 form.id = 'form';
+form.name = 'form';
 form.action = "/someaction";
 
 
@@ -154,7 +155,7 @@ input3.name = 'city';
 document.body.appendChild(form);
 form.append(input1, input2, input3);
 
-document.forms.form.onsubmit = function (e){
+document.forms.onsubmit = function (e){
     e.preventDefault();
 };
 
@@ -174,7 +175,8 @@ form.age.onclick = function (){
 };
 
 
-    form.city.onclick = function (){
+
+form.city.onclick = function (){
         if(this.checked){
             console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
         }else{
@@ -182,4 +184,24 @@ form.age.onclick = function (){
         }
     };
 
-//далі не можу розібратись, що з тим робити(
+/* function filter () {
+     if (form.status.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => !value.status));
+     } else if (form.age.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29));
+     } else if (form.city.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
+     } else if (form.status.onclick.checked && form.age.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => !value.status && value.age > 0 && value.age >= 29));
+     } else if (form.status.onclick.checked && form.city.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => !value.status && value.address.city === 'Kyiv'));
+     } else if (form.age.onclick.checked && form.city.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29 && value.address.city === 'Kyiv'));
+     } else if (form.status.onclick.checked && form.age.onclick.checked && form.city.onclick.checked) {
+         return console.log(usersWithAddress.filter(value => !value.status && value.age > 0 && value.age >= 29 && value.address.city === 'Kyiv'));
+     }
+ }
+filter();*/
+//далі не можу розібратись, що з тим робити, бо по одному працює, а як разом зібрала, то ніяк
+
+
