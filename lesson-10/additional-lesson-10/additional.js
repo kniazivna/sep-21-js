@@ -135,9 +135,51 @@ let usersWithAddress = [
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 let form = document.createElement("form");
+form.id = 'form';
+form.action = "/someaction";
+
+
 let input1 = document.createElement("input");
 input1.type = 'checkbox';
-input1.name = 'input1';
+input1.name = 'status';
+
+let input2 = document.createElement("input");
+input2.type = 'checkbox';
+input2.name = 'age';
+
+let input3 = document.createElement("input");
+input3.type = 'checkbox';
+input3.name = 'city';
 
 document.body.appendChild(form);
-form.append(input1);
+form.append(input1, input2, input3);
+
+document.forms.form.onsubmit = function (e){
+    e.preventDefault();
+};
+
+form.status.onclick = function (){
+    if(this.checked){
+         console.log(usersWithAddress.filter(value => !value.status));
+    }else{
+        console.log(usersWithAddress);
+    }
+};
+form.age.onclick = function (){
+    if(this.checked){
+        console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29));
+    }else{
+        console.log(usersWithAddress);
+    }
+};
+
+
+    form.city.onclick = function (){
+        if(this.checked){
+            console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
+        }else{
+            console.log(usersWithAddress);
+        }
+    };
+
+//далі не можу розібратись, що з тим робити(
