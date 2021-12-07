@@ -159,6 +159,7 @@ document.forms.onsubmit = function (e){
     e.preventDefault();
 };
 
+/*
 form.status.onclick = function (){
     if(this.checked){
          console.log(usersWithAddress.filter(value => !value.status));
@@ -174,8 +175,6 @@ form.age.onclick = function (){
     }
 };
 
-
-
 form.city.onclick = function (){
         if(this.checked){
             console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
@@ -183,8 +182,9 @@ form.city.onclick = function (){
             console.log(usersWithAddress);
         }
     };
+*/
 
-/* function filter () {
+ function filter () {
      if (form.status.onclick.checked) {
          return console.log(usersWithAddress.filter(value => !value.status));
      } else if (form.age.onclick.checked) {
@@ -200,8 +200,11 @@ form.city.onclick = function (){
      } else if (form.status.onclick.checked && form.age.onclick.checked && form.city.onclick.checked) {
          return console.log(usersWithAddress.filter(value => !value.status && value.age > 0 && value.age >= 29 && value.address.city === 'Kyiv'));
      }
+     else{
+         return console.log(usersWithAddress);
+     }
  }
-filter();*/
+filter();
 //далі не можу розібратись, що з тим робити, бо по одному працює, а як разом зібрала, то ніяк
 
 
