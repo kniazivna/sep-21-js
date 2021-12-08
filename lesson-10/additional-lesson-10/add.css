@@ -14,8 +14,6 @@ img{
 }
 .hide{
     display: none;
-}.active{
-    display: block;
 }
 #carousel{
     width: 80%;

@@ -252,23 +252,23 @@ document.body.appendChild(contsiner);
 //- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 let prev = document.getElementById('prev');
 let next = document.getElementById('next');
-
 let slides = document.getElementsByClassName('slide');
-console.log(slides);
 
-//next.onclick = function () {
-    for (let i = 0; i < slides.length; i++) {
-        next.onclick = function () {
-      //  slides[i].classList.remove('active');
-        slides[i].classList.toggle('hide');
+let i = 0;
+prev.onclick = function (){
+    slides[i].classList.toggle('hide');
+    i--;
+    if(i < 0){
+        i = slides.length - 1;
+    }//  тут не можу зрозуміти як воно має працювати,можливо зможете направити)
+}
 
-         }
-
-        console.log(slides[i]);
+next.onclick = function () {
+    slides[i].classList.toggle('hide');
+    i++;
+    if (i > slides.length - 1) {
+        i = 0;
     }
-//}
-//console.log(slides[0]);
-
-//тут я заплуталась, можливо порадите як далі рухатись
-
+}
+//console.log(slides[i]);
 
