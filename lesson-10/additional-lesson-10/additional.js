@@ -112,27 +112,22 @@ document.body.onclick = function (e) {
 //-- взять массив пользователей
 
 let usersWithAddress = [
-    {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-    {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-    {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-    {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-    {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-    {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-    {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-    {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-    {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+    {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
 ];
-
-
 
 
 //     - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как
 //     вместе так и по отдельности.
-// 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
-// 2й - оставляет старше 29 лет включительно
-// 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 let form = document.createElement("form");
 form.id = 'form';
@@ -144,6 +139,7 @@ let input1 = document.createElement("input");
 input1.type = 'checkbox';
 input1.name = 'status';
 
+
 let input2 = document.createElement("input");
 input2.type = 'checkbox';
 input2.name = 'age';
@@ -152,59 +148,103 @@ let input3 = document.createElement("input");
 input3.type = 'checkbox';
 input3.name = 'city';
 
-document.body.appendChild(form);
+let buttonSub = document.createElement("button");
+buttonSub.innerText = "Submit";
+
+
+document.body.append(form, buttonSub);
 form.append(input1, input2, input3);
 
-document.forms.onsubmit = function (e){
+document.forms.onsubmit = function (e) {
     e.preventDefault();
-};
+}
 
-/*
-form.status.onclick = function (){
-    if(this.checked){
-         console.log(usersWithAddress.filter(value => !value.status));
-    }else{
-        console.log(usersWithAddress);
-    }
-};
-form.age.onclick = function (){
-    if(this.checked){
-        console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29));
-    }else{
-        console.log(usersWithAddress);
-    }
-};
+// // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+// form.status.onclick = function (){
+//     if(this.checked){
+//          console.log(usersWithAddress.filter(value => !value.status));
+//     }else{
+//         console.log(usersWithAddress);
+//     }
+// };
+//
+// // 2й - оставляет старше 29 лет включительно
+// form.age.onclick = function (){
+//     if(this.checked){
+//         console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29));
+//     }else{
+//         console.log(usersWithAddress);
+//     }
+// };
+// // 3й - оставляет тех у кого город киев
+// form.city.onclick = function (){
+//         if(this.checked){
+//             console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
+//         }else{
+//             console.log(usersWithAddress);
+//         }
+//     };
 
-form.city.onclick = function (){
-        if(this.checked){
-            console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
-        }else{
-            console.log(usersWithAddress);
+let contsiner = document.createElement('div');
+
+
+
+for (const us of usersWithAddress) {
+    let user = document.createElement('div');
+    user.style.border = '3px solid yellow';
+    //
+  // console.log(us.status);
+    contsiner.appendChild(user);
+
+    for (item in us) {
+        let list = document.createElement('ul');
+        list.style.backgroundColor = 'silver';
+        user.appendChild(list);
+        let info = document.createElement('li');
+        info.style.listStyle = 'none';
+        list.appendChild(info);
+        if (typeof us[item] !== "object") {
+            info.innerText = `${item} : ${us[item]}`;
+        } else {
+            info.innerText = `${item}`;
+            let sublist = document.createElement('ul');
+            info.appendChild(sublist);
+            for (element in us[item]) {
+                let address = document.createElement('li');
+                address.innerText = `${element} : ${us[item][element]}`
+                sublist.appendChild(address);
+            }
         }
-    };
-*/
-
- function filter () {
-     if (form.status.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => !value.status));
-     } else if (form.age.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29));
-     } else if (form.city.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
-     } else if (form.status.onclick.checked && form.age.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => !value.status && value.age > 0 && value.age >= 29));
-     } else if (form.status.onclick.checked && form.city.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => !value.status && value.address.city === 'Kyiv'));
-     } else if (form.age.onclick.checked && form.city.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29 && value.address.city === 'Kyiv'));
-     } else if (form.status.onclick.checked && form.age.onclick.checked && form.city.onclick.checked) {
-         return console.log(usersWithAddress.filter(value => !value.status && value.age > 0 && value.age >= 29 && value.address.city === 'Kyiv'));
-     }
-     else{
-         return console.log(usersWithAddress);
-     }
- }
-filter();
-//далі не можу розібратись, що з тим робити, бо по одному працює, а як разом зібрала, то ніяк
+    }
+}
+document.body.appendChild(contsiner);
 
 
+//тут я застрягла, думаю, що не з тої,що треба сторони підходжу, бо нижче зробила фільтр, який працює, але виводить в
+// консоль, а от як правильно в документ то діло вивести не зрозумію ніяк, всі мої спроби невдалі(((
+//можливо підкажете в яку сторону рухатись))))
+
+// function filter() {
+// //console.log(usersWithAddress);
+//     buttonSub.onclick = function () {
+//         if (form.status.checked && form.age.checked && form.city.checked) {
+//             console.log(usersWithAddress.filter(value => !value.status && (value.age > 0 && value.age >= 29) && (value.address.city === 'Kyiv')));
+//         } else if (form.status.checked && form.age.checked) {
+//             console.log(usersWithAddress.filter(value => !value.status && (value.age > 0 && value.age >= 29)));
+//         } else if (form.status.checked && form.city.checked) {
+//             console.log(usersWithAddress.filter(value => !value.status && (value.address.city === 'Kyiv')));
+//         } else if (form.age.checked && form.city.checked) {
+//             console.log(usersWithAddress.filter(value => (value.age > 0 && value.age >= 29) && (value.address.city === 'Kyiv')));
+//         } else if (form.status.checked) {
+//             console.log(usersWithAddress.filter(value => !value.status));
+//         } else if (form.age.checked) {
+//             console.log(usersWithAddress.filter(value => value.age > 0 && value.age >= 29));
+//         } else if (form.city.checked) {
+//             console.log(usersWithAddress.filter(value => value.address.city === 'Kyiv'));
+//         }
+//     }
+// }
+// filter();
+
+
+// user.classList.add('hidden');
