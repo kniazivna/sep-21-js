@@ -188,12 +188,11 @@ document.forms.onsubmit = function (e) {
 let contsiner = document.createElement('div');
 
 
-
 for (const us of usersWithAddress) {
     let user = document.createElement('div');
     user.style.border = '3px solid yellow';
     //
-  // console.log(us.status);
+    // console.log(us.status);
     contsiner.appendChild(user);
 
     for (item in us) {
@@ -248,3 +247,28 @@ document.body.appendChild(contsiner);
 
 
 // user.classList.add('hidden');
+
+//===================================================================================================================
+//- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+let prev = document.getElementById('prev');
+let next = document.getElementById('next');
+
+let slides = document.getElementsByClassName('slide');
+console.log(slides);
+
+//next.onclick = function () {
+    for (let i = 0; i < slides.length; i++) {
+        next.onclick = function () {
+      //  slides[i].classList.remove('active');
+        slides[i].classList.toggle('hide');
+
+         }
+
+        console.log(slides[i]);
+    }
+//}
+//console.log(slides[0]);
+
+//тут я заплуталась, можливо порадите як далі рухатись
+
+

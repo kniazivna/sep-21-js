@@ -126,7 +126,7 @@ console.log(address);*/
 
 //писала цей скрипт використовуючи rules.html, а не масив,який знизу!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-/*let ul = document.getElementById('content');
+let ul = document.getElementById('content');
 let ulElement = document.createElement('ul');
 ul.appendChild(ulElement);
 let title = document.getElementsByTagName('h2');
@@ -135,7 +135,7 @@ for(let item of title){
     let li = document.createElement('li');
   li.innerText = item.innerText;
     ulElement.appendChild(li);
-}*/
+}
 
 
 
@@ -179,6 +179,7 @@ let rules = [
 
 ];
 
+/*
 let divWrap = document.createElement('div');
 divWrap.id = 'wrap2';//тут спеціально до id додала 2, щоб не повторювався
 for(i = 0; i < rules.length; i++) {
@@ -192,4 +193,4 @@ for(i = 0; i < rules.length; i++) {
     p.innerText = rules[i].body;
     div.appendChild(p);
 }
-document.body.appendChild(divWrap);
+document.body.appendChild(divWrap);*/

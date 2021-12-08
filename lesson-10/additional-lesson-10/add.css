@@ -5,3 +5,26 @@
 .hidden{
     display: none;
 }
+img{
+    width: 100%;
+    overflow: hidden;
+}
+.active{
+    display: block;
+}
+.hide{
+    display: none;
+}.active{
+    display: block;
+}
+#carousel{
+    width: 80%;
+    margin: 0 auto;
+}
+button{
+    padding: 10px;
+}
+.btns{
+  display: flex;
+    justify-content: center;
+}
