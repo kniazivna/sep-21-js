@@ -18,24 +18,42 @@ let users = [
 ];
 
 
-let key = 'listOfFavourites';
-let favourites = [];
-localStorage.setItem(key, JSON.stringify(favourites));
-for(user of users){
+let favorites = [];
+localStorage.setItem('ListOfFavourites', JSON.stringify(favorites))
+for (let user of users) {
     let block = document.createElement('div');
     block.innerText = `Name: ${user.name} Age: ${user.age} Status: ${user.status}`;
     block.style.border = '2px solid green';
     let button = document.createElement('button');
     button.innerText = 'Add to favorites';
-button.onclick = () => {
-    favourites = JSON.parse(localStorage.getItem(key));
-    favourites.push(user);
-    localStorage.setItem(key, JSON.stringify(favourites));
+    button.onclick = () => {
+        favorites = JSON.parse(localStorage.getItem('ListOfFavourites'));
+        favorites.push(user);
+        localStorage.setItem('ListOfFavourites', JSON.stringify(favorites));
     }
 
-    document.body.append(block, button);
+
+    document.body.append(block);
+    block.append(button);
+
 }
 
+
+// for (const user of users) {
+//         let userDiv = document.createElement('div');
+//         userDiv.innerText = JSON.stringify(user);
+//         let btn = document.createElement('button');
+//         btn.innerText = 'add';
+//         btn.onclick = function () {
+//             let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+//             favorites.push(user);
+//             localStorage.setItem('favorites', JSON.stringify(favorites));
+//         };
+//
+//         userDiv.appendChild(btn);
+//
+//         document.body.appendChild(userDiv);
+//     }
 
 
 
