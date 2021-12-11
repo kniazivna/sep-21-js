@@ -12,7 +12,8 @@
     margin: 5px;
     padding: 10px;
     width: 45%;
-    border: 2px solid mediumpurple;
+    border-radius: 5px;
+    box-shadow: -7px -2px 15px -2px rgba(223, 29, 238, 0.6) inset;
     display: flex;
     justify-content: space-between;
     align-items: center;
