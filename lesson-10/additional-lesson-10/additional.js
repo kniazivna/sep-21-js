@@ -129,35 +129,35 @@ let usersWithAddress = [
 //     - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как
 //     вместе так и по отдельности.
 // Данные выводить в документ
-let form = document.createElement("form");
-form.id = 'form';
-form.name = 'form';
-form.action = "/someaction";
-
-
-let input1 = document.createElement("input");
-input1.type = 'checkbox';
-input1.name = 'status';
-
-
-let input2 = document.createElement("input");
-input2.type = 'checkbox';
-input2.name = 'age';
-
-let input3 = document.createElement("input");
-input3.type = 'checkbox';
-input3.name = 'city';
-
-let buttonSub = document.createElement("button");
-buttonSub.innerText = "Submit";
-
-
-document.body.append(form, buttonSub);
-form.append(input1, input2, input3);
-
-document.forms.onsubmit = function (e) {
-    e.preventDefault();
-}
+// let form = document.createElement("form");
+// form.id = 'form';
+// form.name = 'form';
+// form.action = "/someaction";
+//
+//
+// let input1 = document.createElement("input");
+// input1.type = 'checkbox';
+// input1.name = 'status';
+//
+//
+// let input2 = document.createElement("input");
+// input2.type = 'checkbox';
+// input2.name = 'age';
+//
+// let input3 = document.createElement("input");
+// input3.type = 'checkbox';
+// input3.name = 'city';
+//
+// let buttonSub = document.createElement("button");
+// buttonSub.innerText = "Submit";
+//
+//
+// document.body.append(form, buttonSub);
+// form.append(input1, input2, input3);
+//
+// document.forms.onsubmit = function (e) {
+//     e.preventDefault();
+// }
 
 // // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
 // form.status.onclick = function (){
@@ -184,39 +184,39 @@ document.forms.onsubmit = function (e) {
 //             console.log(usersWithAddress);
 //         }
 //     };
-
-let contsiner = document.createElement('div');
-
-
-for (const us of usersWithAddress) {
-    let user = document.createElement('div');
-    user.style.border = '3px solid yellow';
-    //
-    // console.log(us.status);
-    contsiner.appendChild(user);
-
-    for (item in us) {
-        let list = document.createElement('ul');
-        list.style.backgroundColor = 'silver';
-        user.appendChild(list);
-        let info = document.createElement('li');
-        info.style.listStyle = 'none';
-        list.appendChild(info);
-        if (typeof us[item] !== "object") {
-            info.innerText = `${item} : ${us[item]}`;
-        } else {
-            info.innerText = `${item}`;
-            let sublist = document.createElement('ul');
-            info.appendChild(sublist);
-            for (element in us[item]) {
-                let address = document.createElement('li');
-                address.innerText = `${element} : ${us[item][element]}`
-                sublist.appendChild(address);
-            }
-        }
-    }
-}
-document.body.appendChild(contsiner);
+//
+// let contsiner = document.createElement('div');
+//
+//
+// for (const us of usersWithAddress) {
+//     let user = document.createElement('div');
+//     user.style.border = '3px solid yellow';
+//     //
+//     // console.log(us.status);
+//     contsiner.appendChild(user);
+//
+//     for (item in us) {
+//         let list = document.createElement('ul');
+//         list.style.backgroundColor = 'silver';
+//         user.appendChild(list);
+//         let info = document.createElement('li');
+//         info.style.listStyle = 'none';
+//         list.appendChild(info);
+//         if (typeof us[item] !== "object") {
+//             info.innerText = `${item} : ${us[item]}`;
+//         } else {
+//             info.innerText = `${item}`;
+//             let sublist = document.createElement('ul');
+//             info.appendChild(sublist);
+//             for (element in us[item]) {
+//                 let address = document.createElement('li');
+//                 address.innerText = `${element} : ${us[item][element]}`
+//                 sublist.appendChild(address);
+//             }
+//         }
+//     }
+// }
+// document.body.appendChild(contsiner);
 
 
 //тут я застрягла, думаю, що не з тої,що треба сторони підходжу, бо нижче зробила фільтр, який працює, але виводить в
@@ -252,23 +252,38 @@ document.body.appendChild(contsiner);
 //- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 let prev = document.getElementById('prev');
 let next = document.getElementById('next');
-let slides = document.getElementsByClassName('slide');
+let imgs = document.getElementsByTagName('img');
 
 let i = 0;
-prev.onclick = function (){
-    slides[i].classList.toggle('hide');
-    i--;
-    if(i < 0){
-        i = slides.length - 1;
-    }//  тут не можу зрозуміти як воно має працювати,можливо зможете направити)
-}
 
-next.onclick = function () {
-    slides[i].classList.toggle('hide');
-    i++;
-    if (i > slides.length - 1) {
-        i = 0;
+function slider() {
+    for (let img of imgs) {
+        img.classList.add('hide');
+        imgs[i].classList.remove('hide');
     }
 }
-//console.log(slides[i]);
+
+prev.addEventListener('click', () => {
+    if (i === 0) {
+        i = imgs.length - 1;
+    } else i--;
+    slider();
+})
+next.addEventListener('click', () => {
+    if (i + 1 === imgs.length) {
+        i = 0;
+    } else i++;
+    slider();
+})
+// Але щоб все працювало в мене в html  у всіх крім 1 картинки клас hide теж прописаний, маю здогадки, що так не має бути))))
+//але іншим варіантом мені не вдається зробити, щоб слайдер працював(
+
+
+
+
+
+
+
+
+
 
