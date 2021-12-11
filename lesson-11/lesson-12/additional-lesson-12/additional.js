@@ -68,23 +68,20 @@ fetch('https://jsonplaceholder.typicode.com/users')
 <h5>name: ${comment.name}</h5><h6>email: ${comment.email}</h6><p>body: ${comment.body}</p>`;
                                                     divPost.appendChild(divComment);
                                                 }
-
+                                                postButton.disabled = true;
                                             }
                                         })
                                 }
                                 divUser.appendChild(divPost);
                                 divPost.appendChild(postButton);
                             }
-
+                            userButton.disabled = true;
                         }
                     })
             }
-
-
-
             wrap.appendChild(divUser);
             divUser.append(id, name, username, email, address, phone, website, company, userButton);
-
         }
     });
 document.body.appendChild(wrap);
+
