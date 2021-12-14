@@ -11,10 +11,10 @@ buttonDeleteAll.onclick = function (){
 
 
 let productsList = JSON.parse(localStorage.getItem('productsList'));
-console.log(productsList);
 
 
-const show = ()=>{
+
+const show = () => {
     wrapper.innerHTML='';
     for(let product of productsList) {
         let productCard = document.createElement('div');
@@ -33,7 +33,7 @@ const show = ()=>{
         buttonDelete.innerText = 'Delete from list';
         buttonDelete.onclick = function () {
             /////подумати як зробити??????бо всі мають ключ name!!!!!!!!!!
-            let index = productsList.findIndex(value1 => value1.id === product.id);
+            let index = productsList.findIndex(item => item.id === product.id);
             productsList.splice(index,1)
 
             localStorage.setItem('productsList', JSON.stringify(productsList));
