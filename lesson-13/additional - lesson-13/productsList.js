@@ -32,7 +32,7 @@ const show = () => {
         buttonDelete.classList.add('buttonDelete');
         buttonDelete.innerText = 'Delete from list';
         buttonDelete.onclick = function () {
-            /////подумати як зробити??????бо всі мають ключ name!!!!!!!!!!
+
             let index = productsList.findIndex(item => item.id === product.id);
             productsList.splice(index,1)
 
