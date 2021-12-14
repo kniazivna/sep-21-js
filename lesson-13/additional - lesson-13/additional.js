@@ -32,13 +32,17 @@ imgInput.onfocus = () => imgInput.value = '';
 let buttonSave = document.createElement('button');
 buttonSave.innerText = 'Add to product list';
 buttonSave.addEventListener('click', () => {// не до кінця зрозуміла з умови чи потрібен тут e.preventDefault();
-   // e.preventDefault();
+    // e.preventDefault();
 
-    let product ={
+    let product = {
         name: nameInput.value,
         value: valueInput.value,
         price: priceInput.value,
         photo: imgInput.value,
+        id: date.getTime(),
+            // let date = new Date();
+            // console.log(date.getTime());
+
     }
 
     let productsList = JSON.parse(localStorage.getItem('productsList')) || [];
@@ -48,7 +52,10 @@ buttonSave.addEventListener('click', () => {// не до кінця зрозум
 })
 
 
-
-
 document.body.appendChild(productForm);
 productForm.append(nameInput, valueInput, priceInput, imgInput, buttonSave);
+
+
+let date = new Date();
+console.log(date);
+console.log(date.getTime());
