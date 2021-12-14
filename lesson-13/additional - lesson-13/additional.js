@@ -39,15 +39,13 @@ buttonSave.addEventListener('click', () => {// не до кінця зрозум
         value: valueInput.value,
         price: priceInput.value,
         photo: imgInput.value,
-        id: date.getTime(),
-            // let date = new Date();
-            // console.log(date.getTime());
+        id: new Date().getTime()
 
-    }
+}
 
-    let productsList = JSON.parse(localStorage.getItem('productsList')) || [];
-    productsList.push(product);
-    localStorage.setItem('productsList', JSON.stringify(productsList));
+let productsList = JSON.parse(localStorage.getItem('productsList')) || [];
+productsList.push(product);
+localStorage.setItem('productsList', JSON.stringify(productsList));
 
 })
 
@@ -55,7 +53,4 @@ buttonSave.addEventListener('click', () => {// не до кінця зрозум
 document.body.appendChild(productForm);
 productForm.append(nameInput, valueInput, priceInput, imgInput, buttonSave);
 
-
-let date = new Date();
-console.log(date);
-console.log(date.getTime());
+//=====================================================================================================================
