@@ -7,6 +7,7 @@ buttonDeleteAll.innerText = "Delete All";
 buttonDeleteAll.classList.add('buttonDeleteAll');
 buttonDeleteAll.onclick = function (){
     localStorage.clear();
+    wrapper.innerHTML='';
 }
 
 
