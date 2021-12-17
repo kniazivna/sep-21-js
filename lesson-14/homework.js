@@ -248,6 +248,7 @@ function houseWorkToDo(houseworkIsDone) {
 //===================================================================================================================
 //async await
 
+/*
 let energy = 0;
 
 //1
@@ -471,4 +472,243 @@ async function myDay() {
     console.error(e)
   }
 }
-myDay()
+myDay()*/
+
+//==================================================================================================================
+
+//За допомогою callback functions
+
+let energy = 0;
+
+//1
+function getUp(getUp, callback) {
+    setTimeout(() => {
+      if (getUp) {
+        energy += 100;
+        console.log('Hello a new day 1');
+        callback(null, energy);
+      } else {
+        callback('You are still asleep', null);
+      }
+    }, 3000)
+}
+
+//2
+function haveBreakfest(energy, callback) {
+    setTimeout(() => {
+      console.log(energy, 'points 2');
+      if (energy >= 50){
+        energy += 100;
+        console.log('I can have breakfast');
+        callback(null, energy);
+      } else {
+        callback('You need a cup of coffee', null);
+      }
+    }, 1000)
+}
+
+//3
+function haveCoffe(cupOfCoffee, callback) {
+    setTimeout(() => {
+      if (cupOfCoffee){
+        energy += 200;
+        console.log('I am full of energy 3');
+        callback(null, energy);
+      } else {
+        callback('You need one more cup of coffee', null);
+      }
+    }, 1000)
+}
+
+//4
+function goToTheBusStation(goToTheBusStation, callback) {
+    setTimeout(() => {
+      if (goToTheBusStation){
+        energy -= 20;
+        console.log('4');
+        callback(null, energy);
+      } else {
+        callback('I have been still waiting the bus', null);
+      }
+    }, 300)
+}
+
+//5
+function goWork(jobIsDone, callback) {
+    setTimeout(() => {
+      if (jobIsDone){
+        energy -= 100;
+        console.log('5');
+        callback(null, energy);
+      } else {
+        callback('The light is turn out', null);
+      }
+    }, 300)
+}
+
+//6
+function haveLunch(haveLunch, callback) {
+    setTimeout(() => {
+      if (haveLunch){
+        energy += 50;
+        console.log('I can have lunch 6');
+        callback(null, energy);
+      } else {
+        callback('You need lunch', null);
+
+      }
+    }, 1000)
+}
+
+//7
+function wodkToDo(jobIsDone, callback) {
+    setTimeout(() => {
+      if (jobIsDone){
+        energy -= 100;
+        console.log('7');
+        callback(null, energy);
+      } else {
+        callback('You have to work more', null);
+      }
+    }, 800)
+}
+
+//8
+function haveDrink(cupOfCoffee, callback) {
+    setTimeout(() => {
+      if (cupOfCoffee){
+        energy += 80;
+        console.log('I have got a power )) 8');
+        callback(null, energy);
+      } else {
+        callback('You need one more cup of coffee', null);
+      }
+    }, 2000)
+}
+
+//9
+function goHome(atHome, callback) {
+    setTimeout(() => {
+      if (atHome){
+        energy -= 50;
+        console.log('9');
+        callback(null, energy);
+      } else {
+        callback('I can not go home', null);
+      }
+    }, 300)
+}
+
+//10
+function familyTime(apendTimeWithFamily, callback) {
+    setTimeout(() => {
+      if (apendTimeWithFamily){
+        energy += 80;
+        console.log('10');
+        callback(null, energy);
+      } else {
+        energy -= 30;
+        callback(energy, null);
+      }
+    }, 300)
+}
+
+//11
+function haveDinner(haveDinner, callback) {
+    setTimeout(() => {
+      if (haveDinner){
+        energy += 50;
+        console.log('I have dinner 11');
+        callback(null, energy);
+      } else {
+        callback('You need dinner', null);
+      }
+    }, 2000)
+}
+
+//12
+function houseWorkToDo(houseworkIsDone, callback) {
+    setTimeout(() => {
+      if (houseworkIsDone){
+        energy -= 100;
+        console.log('12');
+        callback(null, energy);
+      } else {
+        callback(energy, null);
+      }
+    }, 300)
+}
+
+getUp(true, (error1, energy) =>{
+  if(error1){
+    console.error(error1)
+  }else{
+    haveBreakfest(energy, (error2, energy) =>{
+      if(error2){
+        console.error(error2)
+      }else{
+        haveCoffe(true, (error3, energy) =>{
+          if(error3){
+            console.error(error3)
+          }else{
+            goToTheBusStation(true, (error4, energy) =>{
+              if(error4){
+                console.error(error4)
+              }else{
+                goWork(true, (error5, energy) =>{
+                  if(error5){
+                    console.error(error5)
+                  }else{
+                    haveLunch(true, (error6, energy) =>{
+                      if(error6){
+                        console.error(error6)
+                      }else{
+                        wodkToDo(true, (error7, energy) =>{
+                          if(error7){
+                            console.error(error7)
+                          }else{
+                            haveDrink(true, (error8, energy) =>{
+                              if(error8){
+                                console.error(error8)
+                              }else{
+                                goHome(true, (error9, energy) =>{
+                                  if(error9){
+                                    console.error(error9)
+                                  }else{
+                                    familyTime(true, (error10, energy) =>{
+                                      if(error10){
+                                        console.error(error10)
+                                      }else{
+                                        haveDinner(true, (error11, energy) =>{
+                                          if(error11){
+                                            console.error(error11)
+                                          }else{
+                                            houseWorkToDo(true, (error12, energy) =>{
+                                              if(error12){
+                                                console.error(error12)
+                                              }else{
+                                                console.log(energy);
+                                              }
+                                            })
+                                          }
+                                        })
+                                      }
+                                    })
+                                  }
+                                })
+                              }
+                            })
+                          }
+                        })
+                      }
+                    })
+                  }
+                })
+              }
+            })
+          }
+        } )
+      }
+    })
+  }
+})
