@@ -64,8 +64,8 @@ fetch('https://jsonplaceholder.typicode.com/users/' + idOfUser)
         postOfCurrentUserButton.className = 'postOfCurrentUserButton';
         postOfCurrentUserButton.innerText = 'Post of current user'
         postOfCurrentUserButton.onclick = () => {
-            let usersDetails = document.getElementsByClassName('usersDetails')[0];
-            usersDetails.innerHTML = '';
+            // let usersDetails = document.getElementsByClassName('usersDetails')[0];
+            //  usersDetails.innerHTML = '';
 
             let postsDiv = document.createElement('div');
             postsDiv.className = 'postsDiv';
